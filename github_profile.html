@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Github Profile</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style type="text/css">
+	.first
+	{
+		margin: 4%;
+	}
+	.main
+	{
+		text-align: center;
+		padding-top: 2%;
+		float:left;
+		background-color: #D3D3D3;
+		font-family: arial;
+	}
+	.twitter
+	{
+		float:right;
+		padding-right:2%;
+		padding-top: 2%;
+		padding-left: 2%;
+		background-color: #00acee;
+		height: 550px;
+		width: 325px;
+		align-content: center;
+		
+	}
+	.table-class
+	{
+		float: left;
+		padding-left: 12%;
+	}
+	.table-class table,th,td{
+		border:1px solid black;
+		text-align: center;
+		height:90px;
+		width: 500px;
+		background-color: #dcffe4;
+	}
+	.first h5
+	{
+		text-align: center;
+	}
+</style>
+<body>
+<div class="first" >
+	<h5 id= "loading" >Loading...</h5>
+<div class="main" id="mainA" hidden>
+	<img id="userimage" height=350 width=300>
+	<h1 id="username"></h1>
+	<p id="userfollowers"> </p>
+	<p id="userbio"></p>
+	<p id="userworkplace"></p>
+</div> 
+<div class="twitter" id="twitterA" hidden>
+<a class="twitter-timeline"  data-width="300" data-height="500" href="https://twitter.com/PoudelSakar?ref_src=twsrc%5Etfw">Tweets by PoudelSakar</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+
+<div class="table-class" id="table-classA" hidden>
+<table >
+					<tr>
+					<th> My Github Projects</th>
+					<th> Link</th>
+					</tr>
+					<tr>
+					<td id="getRepos1"></td>
+					<td><a id ="getReposLink1">Show this Project</a></td>
+					</tr>
+					<tr>
+					<td id="getRepos2"></td>
+					<td><a id ="getReposLink2">Show this Project</a></td>
+					</tr>
+					<tr>
+					<td id="getRepos3"></td>
+					<td><a id ="getReposLink3">Show this Project</a></td>
+				    </tr>
+				    <tr>
+					<td id="getRepos4"></td>
+					<td><a id ="getReposLink4">Show this Project</a></td>
+					</tr>
+					<tr>
+					<td id="getRepos5"></td>
+					<td><a id ="getReposLink5">Show this Project</a></td>
+					</tr>
+</table>
+</div>
+</div>
+	<script>
+	fetch("https://api.github.com/users/sakar123")
+		.then(response => response.json())
+		.then(function(data)
+		{
+				console.log(data)
+				let workdata=data['company']
+				let followerdata=data['followers']
+				let workplaceinfo= `I am currently working at ${workdata}`
+				let followersinfo=`Followed By ${followerdata} on Github`
+				document.getElementById('userimage').src=data['avatar_url']
+				document.getElementById('username').textContent=data['name']
+				document.getElementById('userworkplace').textContent=workplaceinfo
+				document.getElementById('userfollowers').textContent=followersinfo
+				document.getElementById('userbio').textContent=data['bio']
+		})
+	</script>
+	<script>
+		fetch("https://api.github.com/users/sakar123/repos")
+		.then (response => response.json())
+		.then ((data1) => {
+				console.log(data1)
+				document.getElementById('getRepos1').textContent=data1[0]["name"]
+				document.getElementById('getReposLink1').href=data1[0]['html_url']
+				document.getElementById('getRepos2').textContent=data1[7]["name"]
+				document.getElementById('getReposLink2').href=data1[7]['html_url']
+				document.getElementById('getRepos3').textContent=data1[8]["name"]
+				document.getElementById('getReposLink3').href=data1[8]['html_url']
+				document.getElementById('getRepos4').textContent=data1[3]["name"]
+				document.getElementById('getReposLink4').href=data1[3]['html_url']
+				document.getElementById('getRepos5').textContent=data1[4]["name"]
+				document.getElementById('getReposLink5').href=data1[4]['html_url']
+
+				document.getElementById("mainA").hidden=false
+				document.getElementById("twitterA").hidden=false
+				document.getElementById("table-classA").hidden=false;
+				document.getElementById("loading").hidden =true;
+		})
+	</script>
+</body>
+</html>
