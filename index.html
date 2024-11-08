@@ -1,132 +1,174 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Github Profile</title>
+	<title>Sakar Poudel Portfolio</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <style type="text/css">
-	.first
-	{
-		margin: 4%;
+	body {
+		font-family: Arial, sans-serif;
+		margin: 0;
+		padding: 0;
 	}
-	.main
-	{
+	.container {
+		width: 80%;
+		margin: 0 auto;
+	}
+	.header {
 		text-align: center;
-		padding-top: 2%;
-		float:left;
-		background-color: #D3D3D3;
-		font-family: arial;
+		padding: 20px;
 	}
-	.twitter
-	{
-		float:right;
-		padding-right:2%;
-		padding-top: 2%;
-		padding-left: 2%;
-		background-color: #00acee;
-		height: 550px;
-		width: 325px;
-		align-content: center;
-		
+	.section {
+		margin-top: 20px;
+		padding: 20px;
+		background-color: #f9f9f9;
+		border-radius: 5px;
 	}
-	.table-class
-	{
-		float: left;
-		padding-left: 12%;
+	h2 {
+		color: #333;
 	}
-	.table-class table,th,td{
-		border:1px solid black;
-		text-align: center;
-		height:90px;
-		width: 500px;
+	.table-class table, th, td {
+		border: 1px solid black;
+		border-collapse: collapse;
+		padding: 10px;
 		background-color: #dcffe4;
-	}
-	.first h5
-	{
-		text-align: center;
 	}
 </style>
 <body>
-<div class="first" >
-	<h5 id= "loading" >Loading...</h5>
-<div class="main" id="mainA" hidden>
-	<img id="userimage" height=350 width=300>
-	<h1 id="username"></h1>
-	<p id="userfollowers"> </p>
-	<p id="userbio"></p>
-	<p id="userworkplace"></p>
-</div> 
-<div class="twitter" id="twitterA" hidden>
-<a class="twitter-timeline"  data-width="300" data-height="500" href="https://twitter.com/PoudelSakar?ref_src=twsrc%5Etfw">Tweets by PoudelSakar</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<div class="container">
+	<div class="header">
+		<img id="userimage" height="150" width="150" alt="Profile Picture">
+		<h1 id="username">Sakar Poudel</h1>
+		<p id="userbio"></p>
+		<p id="userworkplace"></p>
+		<p id="userfollowers"></p>
+		<p><a href="https://www.linkedin.com/in/sakar1" target="_blank">LinkedIn</a> | <a href="https://github.com/sakar123" target="_blank">GitHub</a> | <a href="https://sakar123.github.io/" target="_blank">Portfolio</a></p>
+	</div>
+
+	<!-- Experience Section -->
+	<div class="section">
+		<h2>Experience</h2>
+		<p><strong>Software Developer</strong> at Southern Farm Bureau Casualty Insurance Company, Ridgeland, Mississippi</p>
+		<p>Jun 2021 – Present, Full-time</p>
+		<ul>
+			<li>Led the upgrade of identity infrastructure, migrating 150,000 users with Auth0, OAuth, OpenID, and SAML.</li>
+			<li>Developed secure APIs with .NET Core, improving security with rate limiting, IP restrictions, and token authorization.</li>
+		</ul>
+		<p><strong>Technology Analyst</strong> at Infosys Limited, Richardson, Texas</p>
+		<p>Jan 2021 – Jun 2021, Full-time</p>
+		<ul>
+			<li>Collaborated to develop an SSO solution for a telecommunications client, integrating in-house applications with third-party vendors.</li>
+		</ul>
+		<p><strong>Freelance Developer</strong> on Upwork, Charlotte, North Carolina</p>
+		<p>Aug 2020 – Jul 2022, Freelance</p>
+		<ul>
+			<li>Led UI-centric projects for login mechanisms using Google Identity, Azure B2C, and email-password authentication.</li>
+		</ul>
+	</div>
+
+	<!-- Education Section -->
+	<div class="section">
+		<h2>Education</h2>
+		<p><strong>Masters in Information Technology</strong> from University of the Cumberlands, Williamsburg, Kentucky | GPA: 3.91</p>
+		<p>Apr 2023 – May 2024</p>
+		<p>Relevant coursework: Cloud Computing, System Analysis & Design, Database Systems, Data Analysis & Visualization</p>
+		<p><strong>Bachelors of Science in Computer Engineering</strong> from University of Southern Mississippi, Hattiesburg, Mississippi | GPA: 3.58</p>
+		<p>Aug 2016 – May 2020</p>
+		<p>Relevant coursework: Network Security, Operating Systems, Software Engineering, Data Structures & Algorithms</p>
+	</div>
+
+	<!-- Skills Section -->
+	<div class="section">
+		<h2>Skills</h2>
+		<ul>
+			<li><strong>Languages:</strong> C#, JavaScript, SQL, C, C++, Python, R</li>
+			<li><strong>Technologies:</strong> .NET Core, Django, Node.js, React, MS-SQL, MongoDB, Git, Docker, AWS, Kubernetes, Kafka, RabbitMQ</li>
+			<li><strong>Methodologies:</strong> Agile, Scrum, OOP, DevOps, CI/CD, TDD</li>
+		</ul>
+	</div>
+
+	<!-- Certifications Section -->
+	<div class="section">
+		<h2>Certifications</h2>
+		<ul>
+			<li>IBM Enterprise Data Science in Practice, Apr 2024</li>
+			<li>IBM Cloud for the Enterprise, Oct 2023</li>
+			<li>Scaled Agile Framework Practitioner, Feb 2021</li>
+		</ul>
+	</div>
+
+	<!-- Organizations Section -->
+	<div class="section">
+		<h2>Organizations</h2>
+		<ul>
+			<li>Auth0 Community by Okta, Community Catalyst - Top Contributor, Feb 2022 - Present</li>
+			<li>Institute of Electrical and Electronics Engineers (IEEE), Student Member, Nov 2018 – 2024</li>
+		</ul>
+	</div>
+
+	<!-- Twitter Section -->
+	<div class="section">
+		<h2>Twitter</h2>
+		<div class="twitter">
+			<a class="twitter-timeline" data-width="300" data-height="500" href="https://twitter.com/PoudelSakar">Tweets by PoudelSakar</a>
+			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		</div>
+	</div>
+
+	<!-- GitHub Projects Section -->
+	<div class="section">
+		<h2>GitHub Projects</h2>
+		<div class="table-class" id="table-classA">
+			<table>
+				<tr>
+					<th>My GitHub Projects</th>
+					<th>Link</th>
+				</tr>
+				<tr>
+					<td id="getRepos1"></td>
+					<td><a id="getReposLink1">Show this Project</a></td>
+				</tr>
+				<tr>
+					<td id="getRepos2"></td>
+					<td><a id="getReposLink2">Show this Project</a></td>
+				</tr>
+				<tr>
+					<td id="getRepos3"></td>
+					<td><a id="getReposLink3">Show this Project</a></td>
+				</tr>
+				<tr>
+					<td id="getRepos4"></td>
+					<td><a id="getReposLink4">Show this Project</a></td>
+				</tr>
+				<tr>
+					<td id="getRepos5"></td>
+					<td><a id="getReposLink5">Show this Project</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
 </div>
 
-<div class="table-class" id="table-classA" hidden>
-<table >
-					<tr>
-					<th> My Github Projects</th>
-					<th> Link</th>
-					</tr>
-					<tr>
-					<td id="getRepos1"></td>
-					<td><a id ="getReposLink1">Show this Project</a></td>
-					</tr>
-					<tr>
-					<td id="getRepos2"></td>
-					<td><a id ="getReposLink2">Show this Project</a></td>
-					</tr>
-					<tr>
-					<td id="getRepos3"></td>
-					<td><a id ="getReposLink3">Show this Project</a></td>
-				    </tr>
-				    <tr>
-					<td id="getRepos4"></td>
-					<td><a id ="getReposLink4">Show this Project</a></td>
-					</tr>
-					<tr>
-					<td id="getRepos5"></td>
-					<td><a id ="getReposLink5">Show this Project</a></td>
-					</tr>
-</table>
-</div>
-</div>
-	<script>
+<!-- JavaScript for GitHub and Twitter APIs -->
+<script>
 	fetch("https://api.github.com/users/sakar123")
 		.then(response => response.json())
-		.then(function(data)
-		{
-				console.log(data)
-				let workdata=data['company']
-				let followerdata=data['followers']
-				let workplaceinfo= `I am currently working at ${workdata}`
-				let followersinfo=`Followed By ${followerdata} on Github`
-				document.getElementById('userimage').src=data['avatar_url']
-				document.getElementById('username').textContent=data['name']
-				document.getElementById('userworkplace').textContent=workplaceinfo
-				document.getElementById('userfollowers').textContent=followersinfo
-				document.getElementById('userbio').textContent=data['bio']
-		})
-	</script>
-	<script>
-		fetch("https://api.github.com/users/sakar123/repos")
-		.then (response => response.json())
-		.then ((data1) => {
-				console.log(data1)
-				document.getElementById('getRepos1').textContent=data1[0]["name"]
-				document.getElementById('getReposLink1').href=data1[0]['html_url']
-				document.getElementById('getRepos2').textContent=data1[7]["name"]
-				document.getElementById('getReposLink2').href=data1[7]['html_url']
-				document.getElementById('getRepos3').textContent=data1[8]["name"]
-				document.getElementById('getReposLink3').href=data1[8]['html_url']
-				document.getElementById('getRepos4').textContent=data1[3]["name"]
-				document.getElementById('getReposLink4').href=data1[3]['html_url']
-				document.getElementById('getRepos5').textContent=data1[4]["name"]
-				document.getElementById('getReposLink5').href=data1[4]['html_url']
+		.then(function(data) {
+			document.getElementById('userimage').src = data['avatar_url'];
+			document.getElementById('username').textContent = data['name'];
+			document.getElementById('userworkplace').textContent = `I am currently working at ${data['company']}`;
+			document.getElementById('userfollowers').textContent = `Followed By ${data['followers']} on GitHub`;
+			document.getElementById('userbio').textContent = data['bio'];
+		});
 
-				document.getElementById("mainA").hidden=false
-				document.getElementById("twitterA").hidden=false
-				document.getElementById("table-classA").hidden=false;
-				document.getElementById("loading").hidden =true;
-		})
-	</script>
+	fetch("https://api.github.com/users/sakar123/repos")
+		.then(response => response.json())
+		.then(data1 => {
+			for (let i = 0; i < 5; i++) {
+				document.getElementById(`getRepos${i+1}`).textContent = data1[i].name;
+				document.getElementById(`getReposLink${i+1}`).href = data1[i].html_url;
+			}
+		});
+</script>
 </body>
 </html>
