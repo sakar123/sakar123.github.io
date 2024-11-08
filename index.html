@@ -17,6 +17,17 @@
 	.header {
 		text-align: center;
 		padding: 20px;
+		position: relative;
+	}
+	.weather {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		background-color: #00acee;
+		color: #fff;
+		padding: 10px;
+		border-radius: 5px;
+		text-align: center;
 	}
 	.section {
 		margin-top: 20px;
@@ -43,6 +54,11 @@
 		<p id="userworkplace"></p>
 		<p id="userfollowers"></p>
 		<p><a href="https://www.linkedin.com/in/sakar1" target="_blank">LinkedIn</a> | <a href="https://github.com/sakar123" target="_blank">GitHub</a> | <a href="https://sakar123.github.io/" target="_blank">Portfolio</a></p>
+
+		<!-- Weather Display Div -->
+		<div class="weather" id="weather">
+			<p>Loading weather...</p>
+		</div>
 	</div>
 
 	<!-- Experience Section -->
@@ -149,8 +165,9 @@
 	</div>
 </div>
 
-<!-- JavaScript for GitHub and Twitter APIs -->
+<!-- JavaScript for GitHub, Weather, and Twitter APIs -->
 <script>
+	// GitHub User Info
 	fetch("https://api.github.com/users/sakar123")
 		.then(response => response.json())
 		.then(function(data) {
@@ -161,6 +178,7 @@
 			document.getElementById('userbio').textContent = data['bio'];
 		});
 
+	// GitHub Repositories
 	fetch("https://api.github.com/users/sakar123/repos")
 		.then(response => response.json())
 		.then(data1 => {
@@ -169,6 +187,41 @@
 				document.getElementById(`getReposLink${i+1}`).href = data1[i].html_url;
 			}
 		});
+
+	// Weather API Functionality
+	function getWeather(latitude, longitude) {
+		const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY';
+		const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+		
+		fetch(url)
+			.then(response => response.json())
+			.then(data => {
+				const temperature = data.main.temp;
+				const description = data.weather[0].description;
+				const location = data.name;
+
+				document.getElementById("weather").innerHTML = `
+					<p><strong>${location}</strong></p>
+					<p>${temperature}°C, ${description}</p>
+				`;
+			})
+			.catch(error => {
+				document.getElementById("weather").innerHTML = `<p>Weather data unavailable</p>`;
+				console.error("Error fetching weather data:", error);
+			});
+	}
+
+	// Get User Location for Weather
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(position => {
+			getWeather(position.coords.latitude, position.coords.longitude);
+		}, error => {
+			document.getElementById("weather").innerHTML = `<p>Unable to access location</p>`;
+			console.error("Error with location access:", error);
+		});
+	} else {
+		document.getElementById("weather").innerHTML = `<p>Geolocation not supported</p>`;
+	}
 </script>
 </body>
 </html>
